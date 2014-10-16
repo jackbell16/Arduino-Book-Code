@@ -1,7 +1,7 @@
 /**
 Questo programma va caricato sul RX e permette di ricevere una stringa che è stata inviata da un altro Arduino
 */ 
-#include <virtualwire.h>
+#include <VirtualWire.h>
  
  
 void setup()
@@ -21,7 +21,7 @@ void loop()
     uint8_t buf[VW_MAX_MESSAGE_LEN];
     uint8_t buflen = VW_MAX_MESSAGE_LEN;
  
-    if (vw_get_message(buf, &amp;buflen)) // Non-blocking
+    if (vw_get_message(buf, &buflen)) // Non-blocking
     {
  int i;
  
@@ -29,7 +29,7 @@ void loop()
  // Message with a good checksum received, dump it.
  Serial.print("Got: ");
   
- for (i = 0; i &lt; buflen; i++)
+ for (i = 0; i<buflen; i++)
  {
      Serial.print(buf[i], HEX);
      Serial.print(" ");
